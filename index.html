@@ -22,9 +22,11 @@
         <button type="button" class="primary" id="btn-download">Baixar PNG</button>
       </div>
     </header>
+
     <main class="stage">
       <article id="ficha" class="ficha" aria-label="Ficha de agente">
         <aside class="side-tab">FICHA DE AGENTE</aside>
+
         <svg class="watermark" viewBox="0 0 200 200" aria-hidden="true">
           <defs>
             <path id="seal-ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0" />
@@ -40,6 +42,7 @@
             <textPath href="#seal-ring" startOffset="0%">ORDO REALITAS  ·  ORDO REALITAS  ·  ORDO REALITAS  ·</textPath>
           </text>
         </svg>
+
         <header class="ficha-head">
           <label class="field field-name">
             <span>PERSONAGEM</span>
@@ -55,6 +58,7 @@
             <em>RPG</em>
           </div>
         </header>
+
         <div class="ficha-body">
           <section class="col-left">
             <div class="wheel" id="wheel">
@@ -108,6 +112,7 @@
                 <b>FOR</b>
               </label>
             </div>
+
             <div class="id-row">
               <label class="bar-field">
                 <span>ORIGEM</span>
@@ -118,6 +123,7 @@
                 <input type="text" id="classe" maxlength="40" />
               </label>
             </div>
+
             <div class="vitals">
               <div class="nex-desl">
                 <label class="mini-box">
@@ -133,6 +139,7 @@
                   <input type="number" id="desl" min="0" max="30" value="9" />
                 </label>
               </div>
+
               <div class="resource">
                 <div class="res-label">PV <em>PONTOS DE VIDA</em></div>
                 <input class="res-now" type="number" id="pv" min="0" value="8" />
@@ -158,6 +165,7 @@
                 </div>
               </div>
             </div>
+
             <div class="defense-block">
               <svg class="shield" viewBox="0 0 64 78" aria-hidden="true">
                 <path d="M32 3 L60 14 V40 C60 58 46 70 32 75 C18 70 4 58 4 40 V14 Z" fill="#111" />
@@ -166,3 +174,59 @@
               </svg>
               <div class="def-main">
                 <div class="def-head">
+                  <span>DEFESA</span>
+                  <output id="defesa">11</output>
+                </div>
+                <p class="def-formula">
+                  = 10 + AGI
+                  + <input type="number" id="def-equip" min="0" max="20" value="0" aria-label="Equipamento" />
+                  + <input type="number" id="def-outros" min="0" max="20" value="0" aria-label="Outros" />
+                </p>
+                <p class="def-caps"><span>Equip.</span><span>Outros</span></p>
+              </div>
+            </div>
+
+            <label class="line-field">
+              <span>PROTEÇÃO</span>
+              <input type="text" id="protecao" maxlength="80" />
+            </label>
+            <label class="line-field">
+              <span>RESISTÊNCIAS</span>
+              <input type="text" id="resistencias" maxlength="80" />
+            </label>
+          </section>
+
+          <section class="col-right">
+            <h2>PERÍCIAS</h2>
+            <div class="skills-head">
+              <span>PERÍCIA</span>
+              <span>DADOS</span>
+              <span>BÔNUS</span>
+              <span>Treino</span>
+              <span>Outros</span>
+            </div>
+            <div id="skills" class="skills"></div>
+          </section>
+        </div>
+
+        <section class="attacks">
+          <h2>ATAQUES</h2>
+          <div class="atk-head">
+            <span>ARMA</span>
+            <span>TESTE</span>
+            <span>DANO</span>
+            <span>CRÍTICO / ALCANCE / ESPECIAL</span>
+          </div>
+          <div id="attacks"></div>
+        </section>
+
+        <footer class="ficha-foot">
+          Fan-made · compatível com Ordem Paranormal RPG · não afiliado à Jambô / Cellbit
+        </footer>
+      </article>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
