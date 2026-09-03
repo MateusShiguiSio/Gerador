@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ficha de Agente — Ordem Paranormal RPG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;900&family=Oswald:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="toolbar no-print">
+      <div>
+        <h1>Gerador de Ficha</h1>
+        <p>Ordem Paranormal RPG — preencha, calcule e baixe a ficha de agente.</p>
+      </div>
+      <div class="toolbar-actions">
+        <button type="button" id="btn-sample">Exemplo</button>
+        <button type="button" id="btn-reset">Resetar</button>
+        <button type="button" class="primary" id="btn-download">Baixar PNG</button>
+      </div>
+    </header>
+    <main class="stage">
+      <article id="ficha" class="ficha" aria-label="Ficha de agente">
+        <aside class="side-tab">FICHA DE AGENTE</aside>
+        <svg class="watermark" viewBox="0 0 200 200" aria-hidden="true">
+          <defs>
+            <path id="seal-ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0" />
+          </defs>
+          <circle cx="100" cy="100" r="92" fill="none" stroke="#111" stroke-width="1.2" />
+          <circle cx="100" cy="100" r="84" fill="none" stroke="#111" stroke-width="0.6" />
+          <circle cx="100" cy="100" r="58" fill="none" stroke="#111" stroke-width="0.8" />
+          <circle cx="100" cy="100" r="22" fill="none" stroke="#111" stroke-width="1" />
+          <path d="M100 48 L128 118 L72 118 Z" fill="none" stroke="#111" stroke-width="1.4" />
+          <ellipse cx="100" cy="96" rx="18" ry="10" fill="none" stroke="#111" stroke-width="1.2" />
+          <circle cx="100" cy="96" r="5" fill="#111" />
+          <text class="seal-text">
+            <textPath href="#seal-ring" startOffset="0%">ORDO REALITAS  ·  ORDO REALITAS  ·  ORDO REALITAS  ·</textPath>
+          </text>
+        </svg>
+        <header class="ficha-head">
+          <label class="field field-name">
+            <span>PERSONAGEM</span>
+            <input type="text" id="personagem" maxlength="48" autocomplete="off" />
+          </label>
+          <label class="field field-name">
+            <span>JOGADOR</span>
+            <input type="text" id="jogador" maxlength="48" autocomplete="off" />
+          </label>
+          <div class="logo">
+            <strong>ORDEM</strong>
+            <strong>PARANORMAL</strong>
+            <em>RPG</em>
+          </div>
+        </header>
+        <div class="ficha-body">
+          <section class="col-left">
+            <div class="wheel" id="wheel">
+              <svg class="wheel-art" viewBox="0 0 340 340" aria-hidden="true">
+                <circle cx="170" cy="170" r="148" fill="none" stroke="#111" stroke-width="0.7" stroke-dasharray="2 6" />
+                <circle cx="170" cy="170" r="138" fill="none" stroke="#111" stroke-width="0.4" />
+                <g class="runes" font-size="11" text-anchor="middle" fill="#111">
+                  <text x="170" y="28">✠</text>
+                  <text x="232" y="48">☽</text>
+                  <text x="292" y="102">❖</text>
+                  <text x="312" y="176">☉</text>
+                  <text x="292" y="248">✦</text>
+                  <text x="232" y="302">♃</text>
+                  <text x="170" y="322">☨</text>
+                  <text x="108" y="302">♄</text>
+                  <text x="48" y="248">☠</text>
+                  <text x="28" y="176">☽</text>
+                  <text x="48" y="102">✦</text>
+                  <text x="108" y="48">☉</text>
+                </g>
+                <line x1="170" y1="170" x2="170" y2="58" />
+                <line x1="170" y1="170" x2="276" y2="133" />
+                <line x1="170" y1="170" x2="236" y2="262" />
+                <line x1="170" y1="170" x2="104" y2="262" />
+                <line x1="170" y1="170" x2="64" y2="133" />
+              </svg>
+              <div class="attr-core">ATRIBUTOS</div>
+              <label class="hex hex-agi">
+                <small>AGILIDADE</small>
+                <input type="number" id="agi" min="0" max="10" value="1" />
+                <b>AGI</b>
+              </label>
+              <label class="hex hex-int">
+                <small>INTELECTO</small>
+                <input type="number" id="int" min="0" max="10" value="1" />
+                <b>INT</b>
+              </label>
+              <label class="hex hex-vig">
+                <small>VIGOR</small>
+                <input type="number" id="vig" min="0" max="10" value="1" />
+                <b>VIG</b>
+              </label>
+              <label class="hex hex-pre">
+                <small>PRESENÇA</small>
+                <input type="number" id="pre" min="0" max="10" value="1" />
+                <b>PRE</b>
+              </label>
+              <label class="hex hex-for">
+                <small>FORÇA</small>
+                <input type="number" id="for" min="0" max="10" value="1" />
+                <b>FOR</b>
+              </label>
+            </div>
+            <div class="id-row">
+              <label class="bar-field">
+                <span>ORIGEM</span>
+                <input type="text" id="origem" maxlength="40" />
+              </label>
+              <label class="bar-field">
+                <span>CLASSE</span>
+                <input type="text" id="classe" maxlength="40" />
+              </label>
+            </div>
+            <div class="vitals">
+              <div class="nex-desl">
+                <label class="mini-box">
+                  <span>NEX</span>
+                  <span class="mini-input">
+                    <input type="number" id="nex" min="0" max="99" value="5" />
+                    <em>%</em>
+                  </span>
+                  <small>PE / RODADA <strong id="pe-rodada">1</strong></small>
+                </label>
+                <label class="mini-box">
+                  <span>DESL</span>
+                  <input type="number" id="desl" min="0" max="30" value="9" />
+                </label>
+              </div>
+              <div class="resource">
+                <div class="res-label">PV <em>PONTOS DE VIDA</em></div>
+                <input class="res-now" type="number" id="pv" min="0" value="8" />
+                <div class="res-max-wrap">
+                  <span>Máx</span>
+                  <input type="number" id="pv-max" min="0" value="8" />
+                </div>
+              </div>
+              <div class="resource">
+                <div class="res-label">PE <em>PONTOS DE ESFORÇO</em></div>
+                <input class="res-now" type="number" id="pe" min="0" value="4" />
+                <div class="res-max-wrap">
+                  <span>Máx</span>
+                  <input type="number" id="pe-max" min="0" value="4" />
+                </div>
+              </div>
+              <div class="resource">
+                <div class="res-label">SAN <em>SANIDADE</em></div>
+                <input class="res-now" type="number" id="san" min="0" value="12" />
+                <div class="res-max-wrap">
+                  <span>Máx</span>
+                  <input type="number" id="san-max" min="0" value="12" />
+                </div>
+              </div>
+            </div>
+            <div class="defense-block">
+              <svg class="shield" viewBox="0 0 64 78" aria-hidden="true">
+                <path d="M32 3 L60 14 V40 C60 58 46 70 32 75 C18 70 4 58 4 40 V14 Z" fill="#111" />
+                <path d="M32 10 L54 18 V39 C54 53 43 63 32 67 C21 63 10 53 10 39 V18 Z" fill="none" stroke="#f6f3ec" stroke-width="1.4" />
+                <path d="M32 18 V58 M22 28 H42" stroke="#f6f3ec" stroke-width="1.6" />
+              </svg>
+              <div class="def-main">
+                <div class="def-head">
