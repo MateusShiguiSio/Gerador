@@ -1,10 +1,5 @@
 (function(){
 
-  // ============================================================
-  // BANCOS DE DADOS
-  // ============================================================
-
-  // nomes convencionais de fantasia — curados para soarem familiares, sem exageros
   var firstNames = ["Kael","Elara","Dorian","Seraphine","Magnus","Isolde","Lucian","Aurelia","Roland","Mireille",
     "Thorian","Cassia","Alaric","Livia","Gideon","Wren","Corwin","Anwen","Silas","Maren",
     "Edric","Talia","Bastian","Ophelia","Ronan","Vesper","Cyrus","Nadia","Emeric","Sable",
@@ -63,8 +58,7 @@
     {name:"Voz da Tempestade", desc:"Comanda ventos e trovões em rajadas curtas durante confrontos abertos."}
   ];
 
-  // ---- blocos para a história expandida (combinados em múltiplos parágrafos) ----
-
+  
   var originPool = ["nas ruínas de um templo esquecido, entre pilares cobertos de musgo e símbolos apagados pelo tempo",
     "em uma vila à beira de um pântano amaldiçoado, onde poucos forasteiros ousam pernoitar",
     "sob o teto de uma ordem de caçadores hereges, escondida nas montanhas a oeste do reino",
@@ -113,7 +107,7 @@
     "Fala com os mortos como se ainda pudessem responder, por hábito mais do que por crença",
     "Recusa-se a dormir sem antes verificar três vezes todas as saídas do local"];
 
-  // biblioteca de ícones de avatar (linhas simples, monocromáticas, coerentes com a paleta)
+  
   var iconLibrary = {
     espada: '<path d="M50 12 L54 46 L50 88 L46 46 Z" /><path d="M32 46 L68 46" /><path d="M42 88 L58 88 L58 94 L42 94 Z" />',
     escudo: '<path d="M50 14 L78 26 L78 52 C78 72 66 84 50 90 C34 84 22 72 22 52 L22 26 Z" /><path d="M50 30 L50 74" /><path d="M34 46 L66 46" />',
@@ -143,9 +137,7 @@
     {a:"#3d1a63", b:"#c7c5d3"}
   ];
 
-  // ============================================================
-  // UTILIDADES
-  // ============================================================
+  
 
   var lastKey = null;
 
@@ -167,7 +159,7 @@
   }
   function capitalize(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
 
-  // ---- avatar SVG procedural ----
+  
   function buildAvatar(archetype){
     var iconKey = archetypeIconHint[archetype] || pick(Object.keys(iconLibrary));
     var iconPaths = iconLibrary[iconKey];
@@ -204,7 +196,6 @@
     return svg;
   }
 
-  // ---- história expandida (multi-parágrafo) ----
   function buildLore(name, archetype){
     var p1 = "<strong>" + name + "</strong>, " + capitalize(archetype).toLowerCase() + ", nasceu " + pick(originPool) + ". " +
       pick(childhoodPool) + ", uma lição que carregaria por toda a vida.";
@@ -216,9 +207,7 @@
     return "<p>" + p1 + "</p><p>" + p2 + "</p><p>" + p3 + "</p>";
   }
 
-  // ============================================================
-  // GERAÇÃO
-  // ============================================================
+  
 
   function generateSheet(){
     var name, archetype, key, tries = 0;
