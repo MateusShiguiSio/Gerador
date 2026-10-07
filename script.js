@@ -223,7 +223,7 @@
     var level = rand(1, 20);
     var xpPct = rand(8, 96);
 
-    var attrs = attrDefs.map(function(a){ return { def: a, score: rand(6, 19) }; });
+    var attrs = attrDefs.map(function(a){ return { def: a, score: rand(1, 20) }; });
     var talents = pickN(talentPool, 3);
     var lore = buildLore(name, archetype);
     var alignment = pick(["Leal e Sombrio","Caótico e Justo","Neutro e Calculista","Rebelde e Devoto","Solitário e Vigilante"]);
